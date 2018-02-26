@@ -1,18 +1,16 @@
 #include<stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 int main()
 {
-    //to print no of 1s in binary form
-long long int num,count=0;
-    scanf("%lld",&num);
-    while(num>0)
+    //to rotate a number
+char num[1000],rot[1000];int count,len,i;
+    scanf("%s%d",num,&count);
+    len=strlen(num);
+    strcpy(rot,num);
+    for(i=0;i<len;++i)
     {
-        if(num%2==1)
-        {
-            ++count;
-        }
-        num/=2;
+        rot[i]=num[(i+count)%len];
     }
-    printf("%lld",count);
+    printf("%s",rot);
 }
