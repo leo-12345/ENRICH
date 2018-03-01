@@ -4,7 +4,7 @@
 int main()
 {
     //number rotate
-    int num,rot,i=0,index=-1,count=0,a[10],j,k,l;
+    int num,rot,i=0,a[10],j,k,l;
     for(i=0;i<10;++i)
     {
         a[i]=0;
@@ -19,7 +19,9 @@ int main()
     }
     for(j=0,k=i-1;j<i/2;++j,--k)
     {
-        l=a[k];a[k]=a[j];a[j]=l;
+        l=a[k];
+        a[k]=a[j];
+        a[j]=l;
     }
     for(j=0;j<i;++j)    
     {
