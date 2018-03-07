@@ -30,12 +30,23 @@ int sort(int n,char a[n][10])
 
 int main() {
     
-    int n,i;
+    int n,i,j,k;
     scanf("%d",&n);
-    char num[n][10],**res;
+    char num[n][10],temp[10];
     for(i=0;i<n;++i)
     {
-        scanf("%s",num[i]);
+        scanf("%s",temp);
+        for(j=0;j<strlen(temp)&&temp[j]=='0';++j);
+        for(k=0;j<strlen(temp);++j,++k)
+        {
+            num[i][k]=temp[j];
+        }
+        num[i][k]='\0';
+            
+    }
+    for(i=0;i<n;++i)
+    {
+        printf("\n%s\n",num[i]);
     }
     sort(n,num);
     return 0;
