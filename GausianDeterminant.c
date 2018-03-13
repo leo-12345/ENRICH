@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-//string sort.
+//determinant.
 
 float det(int n,float a[n][n])
 {
@@ -25,12 +25,16 @@ float det(int n,float a[n][n])
     {
         res*=a[i][i];
     }
+   if(res<0)
+   {
+       res*=-1;
+   }
     return res;
 }
 
 int main() {
     
-    int n,i,j;
+    int n,i,j,k;
     scanf("%d",&n);
     float num[n][n];
     for(i=0;i<n;++i)
@@ -39,6 +43,22 @@ int main() {
         {
             scanf("%f",&num[i][j]);
         }
+    }
+    if(num[0][0]==0)
+    {
+    for(i=0;i<n;++i)
+    {
+        if(num[i][0]!=0)
+        {
+            break;
+        }
+    }
+    for(j=0;j<n;++j)
+    {
+        k=num[i][j];
+        num[i][j]=num[0][j];
+        num[0][j]=k;
+    }
     }
     printf("%f",det(n,num));
     return 0;
