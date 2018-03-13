@@ -3,12 +3,19 @@
 #include <math.h>
 #include <stdlib.h>
 
-//determinant.
+//determinant
 
 float det(int n,float a[n][n])
 {
     int i,j,k,m,x=0,y,t[n];
     float l;
+    for(i=0;i<n;++i)
+    {
+        if(a[i][i]==0)
+        {
+            return 0;
+        }
+    }
     for(i=0;i<n;++i)
     {
         for(j=0;j<i;++j)
