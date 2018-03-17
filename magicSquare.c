@@ -18,10 +18,8 @@ int calc(int n)
     //printf("%d %d",i,j);
     while(k<=n*n)
     {
-        //printf("%d %d    %d   ",i,j,k);
-    if(i==-1&&j==n)
+        if(i==-1&&j==n)
     {
-        //printf("-5");
         a[1][j-1]=k;
         i=0;
         j=0;
@@ -31,11 +29,9 @@ int calc(int n)
          a[i][j]=k;
          --i;
          ++j;
-         //printf("-1");
          }
      else if(i>=0&&j<n&&(a[i][j]!=-1||(i==-1&&j==n)))
      {
-         //printf("-2");
          if(a[i][j]!=-1)
          {
              a[i+2][j-1]=k;
@@ -50,7 +46,6 @@ int calc(int n)
     }
      else if(i==-1)
      {
-         //printf("-3 %d %d",i,j);
          if(a[n-1][j]==-1)
          {
              a[n-1][j]=k;
@@ -60,15 +55,12 @@ int calc(int n)
      }
      else if(j==n)
      {
-         //printf("-4");
          a[i][0]=k;
          j=1;
          --i;
      }
-     //printf("\n");
      ++k;
      }
-    //printf("\n");
      for(i=0;i<n;++i)
     {
         for(j=0;j<n;++j)
