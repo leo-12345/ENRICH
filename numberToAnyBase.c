@@ -6,7 +6,7 @@ int convert(int n,int b)
 {
     //number conversion
     int i,j,k=b,l,m,size=0,a[1000];
-    /*for example -192=-190-2 or -195+3 since remainders are always positive the latter is chosen and 1 is added to quotient */ 
+    //for example -192=-190-2 or -195+3 since remainders are always positive the latter is chosen and 1 is added to quotient 
     while(n!=0)
     {
         int rem=n%b;
@@ -31,6 +31,17 @@ int main()
 int n,b;
     int s[1000];
     scanf("%d%d",&n,&b);//read the input
+    if(b==0)
+    {
+        printf("invalid base");
+    }
+    if(n==0)
+    {
+        printf("0");
+    }
+    else
+    {
     convert(n,b);
+    }
 return 0;
 }
