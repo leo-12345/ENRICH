@@ -1,4 +1,4 @@
-#include <stdio.h>
+ as no#include <stdio.h>
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
@@ -27,7 +27,7 @@ int compression(char s[100000])
 int main()
 {
 char s[100000];
-    scanf("%[^\n]s",s);//read the string till a new line occurs
+    scanf("%[^\n]s",s);//read the string till a new line occurs as normal string reading reads till first space
     compression(s);
 return 0;
 }
