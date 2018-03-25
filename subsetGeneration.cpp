@@ -13,15 +13,6 @@ int showSubsets(int n,int a[10000],int b[10000],int size)
     int j;
     ++x;
     j=showSubsets(n-1,a,b,size);
-    for(int i=0;i<size;++i)
-    {
-        k=1;
-        printf("%d ",b[i]);
-    }
-    if(k==1)
-    {
-        printf("\n");
-    }
     b[size]=a[n];
     ++size;
     j=showSubsets(n-1,a,b,size);
