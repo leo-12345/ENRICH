@@ -100,6 +100,7 @@ int main(int argc, char** argv)
         {
             printf("%d   ",ip[j]);
         }
+     //to handle the remaining expression that is free of parenthesis
      for(j=0;j<top;++j)
         {
             if(stack[j]==43) //43=+ to handle +
