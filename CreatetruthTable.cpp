@@ -33,23 +33,27 @@ int main(int argc, char** argv)
             binary[0]=0;
             z=1;
         }
+        //decimal to binary
         while(x>0)
         {
             binary[z]=x%2;
             x/=2;
             ++z;
         }
+        //reversing the obtained result to get the original binary number
         for(x=0,y=z-1;x<y;++x,--y)
         {
             j=binary[x];
             binary[x]=binary[y];
             binary[y]=j;
         }
+        //assigning n bit binary result to input array
         for(j=0,k=n-z;j<z;++j,++k)
         {
             ip[k]=binary[j];
         }
         int stack[1000],top=0;
+        //to handle the parenthesis part as parenthesis has the highest precedence
         for(j=0;c[j]!='\0';++j)
         {
             if(c[j]!=')')
@@ -98,7 +102,7 @@ int main(int argc, char** argv)
         }
      for(j=0;j<top;++j)
         {
-            if(stack[j]==43)
+            if(stack[j]==43) //43=+ to handle +
             {
                 stack[j-1]=stack[j-1]|stack[j+1];
                 top-=2;
@@ -107,7 +111,7 @@ int main(int argc, char** argv)
                     stack[k]=stack[k+2];
                 }
             }
-         if(stack[j]==42)
+         if(stack[j]==42) //42=* to handle *
             {
                 stack[j-1]=stack[j-1]&stack[j+1];
                 top-=2;
@@ -116,7 +120,7 @@ int main(int argc, char** argv)
                     stack[k]=stack[k+2];
                 }
             }
-         if(stack[j]==94)
+         if(stack[j]==94) //94=^ to handle XOR
             {
                 stack[j-1]=stack[j-1]^stack[j+1];
                 top-=2;
@@ -125,13 +129,13 @@ int main(int argc, char** argv)
                     stack[k]=stack[k+2];
                 }
             }
-         if(stack[j]==43)
+         if(stack[j]==33) //33=! to handle NOT
             {
-                stack[j-1]=stack[j-1]|stack[j+1];
-                top-=2;
-                for(k=j;k<top;++k)
+                stack[j]=!stack[j+1];
+                top-=1;
+                for(k=j+1;k<top;++k)
                 {
-                    stack[k]=stack[k+2];
+                    stack[k]=stack[k+1];
                 }
             }
          
